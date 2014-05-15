@@ -4,7 +4,7 @@
 # **STRING**
 # jQuery selector for the elements where the links reside (exclude your editor here!).
 # <p>Please escape apostrophes.</p>
-$Foswiki::cfg{LinkSymbolPlugin}{selector} = 'div.foswikiTopic a:not(div.patternEditTopic a)';
+$Foswiki::cfg{LinkSymbolPlugin}{selector} = 'div.foswikiTopic a:not(div.patternEditTopic a, div.solrSearchHits a)';
 
 # **STRING 80x15**
 # Javascript object with a mapping from extension-regexes to their image.
