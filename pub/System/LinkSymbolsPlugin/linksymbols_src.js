@@ -10,7 +10,7 @@ jQuery(function($){
         if(!check || !(options.map[check])) continue;
         regexpns[check] = new RegExp("^(?:" + check + ")$");
     }
-    var webRegex = new RegExp("^(?:(?:"+foswiki.getPreference('SCRIPTURL')+"|"+foswiki.getPreference('SCRIPTURLPATH')+")/view"+foswiki.getPreference('SCRIPTSUFFIX')+")/(.*?)/");
+    var webRegex = new RegExp("^(?:(?:"+foswiki.getPreference('SCRIPTURL')+"|"+foswiki.getPreference('SCRIPTURLPATH')+")/view"+foswiki.getPreference('SCRIPTSUFFIX')+")?/(.*?)/");
     var webRegexpns = {};
     for(check in options.webmap) {
         if(!check || !(options.webmap[check])) continue;
