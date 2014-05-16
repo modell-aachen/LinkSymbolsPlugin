@@ -37,11 +37,11 @@ sub initPlugin {
         return 0;
     }
 
-    my $map = $Foswiki::cfg{LinkSymbolPlugin}{mapping};
-    my $webmap = $Foswiki::cfg{LinkSymbolPlugin}{webmapping};
-    my $selector = $Foswiki::cfg{LinkSymbolPlugin}{selector};
-    my $append = $Foswiki::cfg{LinkSymbolPlugin}{append};
-    my $prepend = $Foswiki::cfg{LinkSymbolPlugin}{prepend};
+    my $map = $Foswiki::cfg{LinkSymbolPlugin}{mapping} || '{}';
+    my $webmap = $Foswiki::cfg{LinkSymbolPlugin}{webmapping} || '{}';
+    my $selector = $Foswiki::cfg{LinkSymbolPlugin}{selector} || 'not(*.*)';
+    my $append = $Foswiki::cfg{LinkSymbolPlugin}{append} || '';
+    my $prepend = $Foswiki::cfg{LinkSymbolPlugin}{prepend} || '';
     return 1 unless $map && $selector && ($append || $prepend);
 
     Foswiki::Func::addToZone('script', 'LINKSYMBOLS', <<SCRIPT, 'JQUERYPLUGIN::FOSWIKI');
