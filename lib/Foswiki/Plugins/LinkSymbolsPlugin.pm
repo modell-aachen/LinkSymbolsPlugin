@@ -38,6 +38,7 @@ sub initPlugin {
     }
 
     my $map = $Foswiki::cfg{LinkSymbolPlugin}{mapping};
+    my $webmap = $Foswiki::cfg{LinkSymbolPlugin}{webmapping};
     my $selector = $Foswiki::cfg{LinkSymbolPlugin}{selector};
     my $append = $Foswiki::cfg{LinkSymbolPlugin}{append};
     my $prepend = $Foswiki::cfg{LinkSymbolPlugin}{prepend};
@@ -45,7 +46,7 @@ sub initPlugin {
 
     Foswiki::Func::addToZone('script', 'LINKSYMBOLS', <<SCRIPT, 'JQUERYPLUGIN::FOSWIKI');
 <script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/LinkSymbolsPlugin/linksymbols.js'></script>
-<script type='text/javascript'>foswiki.LinkSymbolsPlugin = { map: $map, selector: '$selector', append: '$append', prepend: '$prepend' };</script>
+<script type='text/javascript'>foswiki.LinkSymbolsPlugin = { map: $map, webmap: $webmap, selector: '$selector', append: '$append', prepend: '$prepend' };</script>
 SCRIPT
 
     return 1;

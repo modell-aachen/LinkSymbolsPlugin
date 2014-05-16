@@ -7,6 +7,11 @@
 $Foswiki::cfg{LinkSymbolPlugin}{selector} = 'div.foswikiTopic a:not(div.patternEditTopic a, div.solrSearchHits a)';
 
 # **STRING 80x15**
+# Javascript object with a mapping from web-regexes to their image.
+$Foswiki::cfg{LinkSymbolPlugin}{webmapping} = "{
+}";
+
+# **STRING 80x15**
 # Javascript object with a mapping from extension-regexes to their image.
 $Foswiki::cfg{LinkSymbolPlugin}{mapping} = "{
 'gif|bmp|png|tiff|svg|jpe?g':'%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/photo.png',
