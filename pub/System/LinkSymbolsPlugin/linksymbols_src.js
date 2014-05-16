@@ -8,7 +8,7 @@ jQuery(function($){
     var regexpns = {};
     for(check in options.map) {
         if(!check || !(options.map[check])) continue;
-        regexpns[check] = new RegExp("^(" + check + ")$");
+        regexpns[check] = new RegExp("^(?:" + check + ")$");
     }
     var webRegex = new RegExp("^(?:(?:"+foswiki.getPreference('SCRIPTURL')+"|"+foswiki.getPreference('SCRIPTURLPATH')+")/view"+foswiki.getPreference('SCRIPTSUFFIX')+")/(.*?)/");
     var webRegexpns = {};
