@@ -21,7 +21,7 @@ $Foswiki::cfg{LinkSymbolPlugin}{mapping} = "{
 # **STRING**
 # html to append to the link - placeholder for the image is $IMAGE
 # <p>Please escape apostrophes.</p>
-$Foswiki::cfg{LinkSymbolPlugin}{append} = '&nbsp;<span class="foswikiIcon" style="white-space:nowrap;"><img width="16" height="16" src="$IMAGE" /></span>';
+$Foswiki::cfg{LinkSymbolPlugin}{append} = '<span class="foswikiIcon" style="white-space:nowrap; margin-left:3px;"><img width="16" height="16" src="$IMAGE" /></span>';
 
 # **STRING**
 # html to prepend to the link - placeholder for the image is $IMAGE
