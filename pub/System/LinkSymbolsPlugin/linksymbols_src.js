@@ -12,6 +12,7 @@ jQuery(function($){
     }
     var webRegex = new RegExp("^(?:(?:"+foswiki.getPreference('SCRIPTURL')+"|"+foswiki.getPreference('SCRIPTURLPATH')+")/view"+foswiki.getPreference('SCRIPTSUFFIX')+")?/(.*?)/");
     var webRegexpns = {};
+    var tableRegex = /#sorted_table/;
     for(check in options.webmap) {
         if(!check || !(options.webmap[check])) continue;
         webRegexpns[check] = new RegExp("^(?:"+check+")$");
@@ -31,6 +32,7 @@ jQuery(function($){
                 }
             }
         } else if(m = webRegex.exec(href)) {
+            if(tableRegex.exec(href)) return;
             var check;
             for(check in webRegexpns) {
                 if(webRegexpns[check].exec(m[1])) {
