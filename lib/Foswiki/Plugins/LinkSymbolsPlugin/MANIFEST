@@ -1,0 +1,5 @@
+!noci
+data/System/LinkSymbolsPlugin.txt 0644 Documentation page
+lib/Foswiki/Plugins/LinkSymbolsPlugin.pm 0444 Perl module
+lib/Foswiki/Plugins/LinkSymbolsPlugin/Config.spec 0444 Configuration
+pub/System/LinkSymbolsPlugin/linksymbols.js 0644
