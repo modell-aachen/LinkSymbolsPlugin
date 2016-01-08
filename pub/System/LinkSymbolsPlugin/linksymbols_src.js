@@ -23,6 +23,10 @@ jQuery(function($){
         if(!href) return;
         var m;
         if(m = extensionRegexp.exec(href)) {
+            if (/^pdf$/i.test(m[1]) && !$this.attr('target')) {
+                $this.attr('target', options.pdfLinkTarget || '_self');
+            }
+
             var check;
             for(check in regexpns) {
                 if(regexpns[check].exec(m[1])) {
