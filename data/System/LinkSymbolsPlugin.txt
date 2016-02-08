@@ -11,6 +11,16 @@ One line description, required for extensions repository catalog.
 ---++ Installation
 %$INSTALL_INSTRUCTIONS%
 
+---++ Ways to open PDF documents
+By default =LinkSymbolsPlugin= will open PDF documents within the current browser tab.
+If you'd like to change that behaviour you may set =PDFLINKTARGET= to =blank= to
+force PDF documents to be opened in a new tab.
+
+Example =SitePreferences/WebPreferences=
+<verbatim>
+   * Set PDFLINKTARGET = blank
+</verbatim>
+
 ---++ Info
 
 |  Author: | StephanOsthold |

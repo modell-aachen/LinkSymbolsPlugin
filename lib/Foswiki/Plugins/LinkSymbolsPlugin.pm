@@ -44,9 +44,13 @@ sub initPlugin {
     my $prepend = $Foswiki::cfg{LinkSymbolPlugin}{prepend} || '';
     return 1 unless $map && $selector && ($append || $prepend);
 
+    my $linkTarget = Foswiki::Func::getPreferencesValue('PDFLINKTARGET') || '';
+    $linkTarget = '_blank' if $linkTarget =~ /blank/i;
+    $linkTarget = '_self' unless $linkTarget =~ /^_blank$/;
+
     Foswiki::Func::addToZone('script', 'LINKSYMBOLS', <<SCRIPT, 'JQUERYPLUGIN::FOSWIKI');
 <script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/LinkSymbolsPlugin/linksymbols.js'></script>
-<script type='text/javascript'>foswiki.LinkSymbolsPlugin = { map: $map, webmap: $webmap, selector: '$selector', append: '$append', prepend: '$prepend' };</script>
+<script type='text/javascript'>foswiki.LinkSymbolsPlugin = { map: $map, webmap: $webmap, selector: '$selector', append: '$append', prepend: '$prepend', pdfLinkTarget: '$linkTarget' };</script>
 SCRIPT
 
     return 1;
