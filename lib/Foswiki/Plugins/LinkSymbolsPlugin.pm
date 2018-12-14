@@ -56,6 +56,23 @@ SCRIPT
     return 1;
 }
 
+sub maintenanceHandler {
+    Foswiki::Plugins::MaintenancePlugin::registerCheck("LinkSymbolsPlugin:oldConfig", {
+        name => "LinkSymbolsPlugin:oldConfig",
+        description => "Check if the selector-configuration is at the old standard",
+        check => sub {
+            if ($Foswiki::cfg{LinkSymbolPlugin}{selector} eq 'div.foswikiTopic a:not(div.patternEditTopic a, div.solrSearchHits a)') {
+                return {
+                    result => 1,
+                    priority => $Foswiki::Plugins::MaintenancePlugin::WARN,
+                    solution => "Your configuration for {LinkSymbolPlugin}{selector} is at the old standard. Please hit the 'reset' link in configure."
+                };
+            }
+            return { result => 0 };
+        }
+    });
+}
+
 1;
 
 __END__
